@@ -15,7 +15,7 @@ module.exports = (robot) ->
   if user
     robot.respond ///
         compare\ me\ (:?#{user}\/)*([\w-]+)\ ([\w\.\/\\-]+)\s([\w\.\/\\-]+)
-      ////i, (msg) ->
+      ///i, (msg) ->
       msg.send "https://github.com/#{user}/#{msg.match[2]}/compare/#{msg.match[3]}...#{msg.match[4]}"
 
     robot.respond ///
