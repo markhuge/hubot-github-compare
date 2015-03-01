@@ -15,6 +15,9 @@
     "hubot-scripts",
     "github"
   ],
+  "peerDependencies": {
+    "coffee-script": "^1.7.0"
+  },
   "author": "Mark Wilkerson <mark@segfawlt.net>",
   "license": "MIT",
   "bugs": {
