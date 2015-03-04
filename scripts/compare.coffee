@@ -19,7 +19,7 @@ module.exports = (robot) ->
   robot.respond /compare (?:me )?([\w-.\/]+) ([\w-.\/]+) (?:to )?([\w-.\/]+)/i, (msg) ->
     [_, repo, from, to] = msg.match
 
-    unless ~repo.indexOf '/'
+    if '/' not in repo
       if user
         repo = "#{user}/#{repo}"
       else
