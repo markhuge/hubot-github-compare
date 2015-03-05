@@ -1,6 +1,6 @@
 {
   "name": "hubot-github-compare",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Return Github comparison URLs for two branches/releases on any repo",
   "main": "index.coffee",
   "scripts": {
