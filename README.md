@@ -1,4 +1,4 @@
-hubot-github-compare
+hubot-github-compare [![Build Status](https://travis-ci.org/markhuge/hubot-github-compare.svg?branch=master)](https://travis-ci.org/markhuge/hubot-github-compare)
 ====================
 
 > Return Github comparison URL for 2 branches/releases on a specified repo
