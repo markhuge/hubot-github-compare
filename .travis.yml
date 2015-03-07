@@ -1,0 +1,24 @@
+language: node_js
+node_js:
+- '0.11'
+- '0.10'
+
+after_success: tar czvf hubot-github-compare-$TRAVIS_BRANCH.tar.gz package.json node_modules/ index.coffee scripts/ README.md LICENSE
+deploy:
+- provider: npm
+  email: mark@segfawlt.net
+  api_key:
+    secure: "ROxBGD6ujopqoL6K0XvjernDZepVco0/ozRuaNQmZRHY1xOAn2rMugE6uT8vw2esQ5sQAnSC1sqMFrMAXPDolqQcHRowrAFF5KKcGCAp4Gt1mHl/Mk2qhBZUEkiASMwcMmUxYxd94Zc72FbbLdZZt5DUr9nr2E/bzPKCi8O3YPM="
+  on:
+    tags: true
+    repo: markhuge/hubot-github-compare
+    all_branches: true
+- provider: releases
+  api_key: 
+    secure: "RBlevR3Oc9C6u2g+a/4K5P7I+cwEbSsOq1IzllNiOmBLsKG3DN6Vs2hiXEuiJyZxvU5ZUK6kVlazRrOOntfV1VPdxzs/VhFKs3ojXRgmNYPkUrWfnJbsF8HXiFqjAX8nTa2OOD1MbyL1RbSf8ayiWYLEzTE0jXpNkclEhvNFeb0="
+  file: hubot-github-compare-$TRAVIS_BRANCH.tar.gz
+  skip_cleanup: true
+  on:
+    repo: markhuge/hubot-github-compare
+    tags: true
+    all_branches: true
