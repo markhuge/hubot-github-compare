@@ -64,4 +64,12 @@ describe 'Github Compare', ->
          expect(msg[0]).to.equal('https://github.com/org/repo/compare/1.2.3...1.2.4')
          done()
        adapter.receive(new TextMessage user, 'hubot compare org/repo 1.2.3 1.2.4')
-     
+
+
+     it 'Github enterprise override', (done) ->
+       process.env.HUBOT_GITHUB_API = 'http://zombo.com'
+       adapter.on 'send', (obj, msg) ->
+         expect(msg[0]).to.equal('http://zombo.com/org/repo/compare/1.2.3...1.2.4')
+         done()
+       adapter.receive(new TextMessage user, 'hubot compare org/repo 1.2.3 1.2.4')
+
